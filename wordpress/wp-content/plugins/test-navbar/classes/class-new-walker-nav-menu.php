@@ -1,7 +1,7 @@
 <?php
 
 class Test_Walker_Nav_Menu extends Walker_Nav_Menu {
-    public function start_lvl( &$output, $depth = 0, $args = null ) {
+    public function start_lvl( &$output, int $depth = 0, array $args = null ): void {
 		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 			$t = '';
 			$n = '';
@@ -138,10 +138,6 @@ class Test_Walker_Nav_Menu extends Walker_Nav_Menu {
 		 * @param int      $depth        Depth of menu item. Used for padding.
 		 */
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $menu_item->ID, $menu_item, $args, $depth );
-
-		/*$li_atts          = array();
-		$li_atts['id']    = ! empty( $id ) ? $id : '';
-		$li_atts['class'] = ! empty( $class_names ) ? $class_names : '';*/
 
 		/**
 		 * Filters the HTML attributes applied to a menu's list item element.
